@@ -319,11 +319,13 @@ function getSumToN(n) {
  *   5   => 5  // 5
  */
 function getSumOfDigits(num) {
-  const sum = num.toString().split('').map(Number);
-  const sum1 = sum.reduce(function (a, b) {
-    return a + b;
-  }, 0);
-  return sum1;
+  let sum = 0;
+  let n = num;
+  while (n) {
+    sum += n % 10;
+    n = Math.floor(n / 10);
+  }
+  return sum;
 }
 
 /**
